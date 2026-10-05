@@ -16,6 +16,12 @@
 
 #pragma once
 
+/* Delay MCU deep sleep during short wireless pauses with the LEDs off.
+ * Bluetooth's separate idle timeout and battery protection stay unchanged.
+ * Applies to Bluetooth and 2.4 GHz; deep sleep remains after 10 minutes.
+ */
+#define DEFAULT_PROCESS_TIME 600000U
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix driver configuration */
 #    define SNLED27351_SELECT_PINS \
